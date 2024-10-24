@@ -1,0 +1,174 @@
+<form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <h3>Editar empresa</h3>
+    <div class="col-12 col-sm-3 p-2">
+      <div class="form-group">
+        <label for="tipo" class="form-label">Tipo de empresa</label>
+        <input type="text" id="tipo" class="form-control" formControlName="tipo">
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 p-2">
+      <div class="form-group">
+        <label for="nome" class="form-label">Nome da empresa*</label>
+        <input type="text" id="nome" class="form-control" formControlName="nome">
+        <div *ngIf="companyForm.get('nome').invalid && companyForm.get('nome').touched" class="text-danger">
+          Nome é obrigatório.
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-3 p-2">
+      <div class="form-group">
+        <label for="cnpj" class="form-label">CNPJ da empresa*</label>
+        <input type="text" id="cnpj" class="form-control" formControlName="cnpj">
+        <div *ngIf="companyForm.get('cnpj').invalid && companyForm.get('cnpj').touched" class="text-danger">
+          CNPJ é obrigatório.
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-4 col-md-1 p-2">
+      <div class="form-group">
+        <label for="cep" class="form-label">CEP</label>
+        <input formControlName="cep" id="cep" placeholder="CEP" class="form-control" (input)="BuscarCEP($event.target.value)" >
+        <!--<button type="button" (click)="buscarCep()">Buscar CEP</button>-->
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 p-2">
+      <div class="form-group">
+        <label for="endereco" class="form-label">Endereço</label>
+        <input type="text" id="endereco" class="form-control" formControlName="endereco">
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-2 p-2">
+      <div class="form-group">
+        <label for="bairro" class="form-label">Bairro</label>
+        <input type="text" id="bairro" class="form-control" formControlName="bairro">
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-1 p-2">
+      <div class="form-group">
+        <label for="uf" class="form-label">Estado</label>
+        <!--<input type="text" id="uf" class="form-control" formControlName="uf">-->
+        <select id="uf" formControlName="uf" class="form-control">
+          <option value="">Selecione o Estado</option>
+          <option *ngFor="let estado of estados" [value]="estado.sigla">
+            {{ estado.sigla }}
+          </option>
+        </select>
+        <div *ngIf="companyForm.get('uf').invalid && companyForm.get('uf').touched" class="text-danger">
+          Por favor, selecione um estado.
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 p-2">
+      <div class="form-group">
+        <label for="cidade" class="form-label">Cidade</label>
+        <input type="text" id="cidade" class="form-control" formControlName="cidade">
+        <!--<select id="cidade" formControlName="cidade" class="form-control" [disabled]="!cidades.length">
+          <option value="">Selecione a Cidade</option>
+          <option *ngFor="let cidade of cidades" [value]="cidade">{{ cidade }}</option>
+        </select>-->
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-2 p-2">
+      <div class="form-group">
+        <label for="cidade" class="form-label">Complemento</label>
+        <input type="text" id="complemento" class="form-control" formControlName="complemento">
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 p-2">
+     <div class="form-group">
+       <label for="celular" class="form-label">Celular*</label>
+       <input type="text" id="celular" class="form-control" formControlName="celular">
+       <div *ngIf="companyForm.get('celular').invalid && companyForm.get('celular').touched" class="text-danger">
+         Celular é obrigatório.
+       </div>
+     </div>
+
+   </div>
+    <div class="col-12 col-sm-6 col-md-3 p-2">
+      <div class="form-group">
+        <label for="administrador" class="form-label">Nome do administrador*</label>
+        <input type="text" id="administrador" class="form-control" formControlName="administrador">
+        <div *ngIf="companyForm.get('administrador').invalid && companyForm.get('administrador').touched" class="text-danger">
+          Nome do administrador é obrigatório.
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 p-2">
+      <div class="form-group">
+        <label for="cpf" class="form-label">CPF</label>
+        <input type="text" id="cpf" class="form-control" formControlName="cpf">
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 p-2">
+      <div class="form-group">
+        <label for="email" class="form-label">E-mail*</label>
+        <input type="email" id="email" class="form-control" formControlName="email">
+        <div *ngIf="companyForm.get('email').invalid && companyForm.get('email').touched" class="text-danger">
+          Email é obrigatório.
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  
+  <!-- Campos de cadastro de empresa -->
+ 
+  <!-- outros campos -->
+  <div class="justify-content-end
+  text-end footer-comand">
+    <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancelar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="companyForm.invalid">Salvar</button>
+  </div>
+
+</form>
+
+
+<!--<form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="nome" class="form-label">Nome</label>
+    <input type="text" id="nome" class="form-control" formControlName="nome">
+    <div *ngIf="companyForm.get('nome').invalid && companyForm.get('nome').touched" class="text-danger">
+      Nome é obrigatório.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="tipo" class="form-label">Tipo</label>
+    <input type="text" id="tipo" class="form-control" formControlName="tipo">
+  </div>
+
+  <div class="form-group">
+    <label for="cnpj" class="form-label">CNPJ</label>
+    <input type="text" id="cnpj" class="form-control" formControlName="cnpj">
+    <div *ngIf="companyForm.get('cnpj').invalid && companyForm.get('cnpj').touched" class="text-danger">
+      CNPJ é obrigatório.
+    </div>
+  </div>
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+  
+
+  
+
+  
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancelar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="companyForm.invalid">Salvar</button>
+  </div>
+</form>-->
+
+
+

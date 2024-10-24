@@ -1,0 +1,61 @@
+<div class="main-content">
+  <div class="row" style="height: 100%; margin: 0;">
+    <div class="col-md-8 col-12 mobile-hide background">
+
+    </div>
+    <div class="col-md-4 col-12">
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <img src="/assets/images/brand/logo-blue.PNG" class="form-img" />
+        <h2>Crie uma conta profissional</h2>
+        <h3>Preencha seus dados para ter acesso</h3>
+
+        <div class="form-group">
+          <label for="nome" class="form-label col-12">Nome</label>
+          <input id="nome" formControlName="nome" type="text" class="form-control" [ngClass]="{'is-invalid': submitted && f.nome.errors}">
+          <div *ngIf="submitted && f.nome.errors" class="invalid-feedback">
+            <div *ngIf="f.nome.errors.required">Nome é obrigatório.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label col-12">Email</label>
+          <input id="email" formControlName="email" type="email" class="form-control" [ngClass]="{'is-invalid': submitted && f.email.errors}">
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email é obrigatório.</div>
+            <div *ngIf="f.email.errors.email">Email inválido.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="senha" class="form-label col-12">Senha</label>
+          <input id="senha" formControlName="senha" type="password" class="form-control" [ngClass]="{'is-invalid': submitted && f.senha.errors}">
+          <div *ngIf="submitted && f.senha.errors" class="invalid-feedback">
+            <div *ngIf="f.senha.errors.required">A senha é obrigatória.</div>
+            <div *ngIf="f.senha.errors.minlength">A senha deve ter no mínimo 6 caracteres.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmacaoSenha" class="form-label col-12">Confirmação de Senha</label>
+          <input id="confirmacaoSenha" formControlName="confirmacaoSenha" type="password" class="form-control" [ngClass]="{'is-invalid': submitted && f.confirmacaoSenha.errors}">
+          <div *ngIf="submitted && f.confirmacaoSenha.errors" class="invalid-feedback">
+            <div *ngIf="f.confirmacaoSenha.errors.required">Confirmação de senha é obrigatória.</div>            
+            <div *ngIf="f.confirmacaoSenha.errors.mustMatch">As senhas não coincidem</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input id="aceitarTermos" formControlName="aceitarTermos" type="checkbox" [ngClass]="{'is-invalid': submitted && f.aceitarTermos.errors}">
+          <label for="aceitarTermos">Eu aceito os <a href="#" target="_blank">termos de uso</a></label>
+          <div *ngIf="submitted && f.aceitarTermos.errors" class="invalid-feedback">
+            <div *ngIf="f.aceitarTermos.errors.requiredTrue">Você deve aceitar os termos de uso.</div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Criar conta</button>
+      </form>
+
+    </div>
+  </div>
+</div>

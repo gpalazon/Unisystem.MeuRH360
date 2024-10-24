@@ -1,0 +1,27 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Nome</label>
+    <input formControlName="name" id="name" type="text" placeholder="Nome">
+    <div *ngIf="submitted && f.name.errors" class="error">O nome é obrigatório.</div>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input formControlName="email" id="email" type="email" placeholder="Email">
+    <div *ngIf="submitted && f.email.errors" class="error">Email inválido.</div>
+  </div>
+
+  <div>
+    <label for="password">Senha</label>
+    <input formControlName="password" id="password" type="password" placeholder="Senha">
+    <div *ngIf="submitted && f.password.errors" class="error">A senha é obrigatória.</div>
+  </div>
+
+  <div>
+    <label for="confirmPassword">Confirmação de Senha</label>
+    <input formControlName="confirmPassword" id="confirmPassword" type="password" placeholder="Confirme a Senha">
+    <div *ngIf="submitted && f.confirmPassword.errors" class="error">Confirmação de senha obrigatória.</div>
+  </div>
+
+  <button type="submit">Registrar</button>
+</form>

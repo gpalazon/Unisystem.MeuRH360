@@ -1,0 +1,15 @@
+<form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
+  <!-- Campos de cadastro de empresa -->
+  <div>
+    <label for="cnpj">CNPJ</label>
+    <input formControlName="cnpj" id="cnpj" placeholder="CNPJ">
+    <div *ngIf="submitted && f.cnpj.errors" class="error">CNPJ é obrigatório.</div>
+  </div>
+  <div>
+    <label for="cep">CEP</label>
+    <input formControlName="cep" id="cep" placeholder="CEP">
+    <button type="button" (click)="buscarCep()">Buscar CEP</button>
+  </div>
+  <!-- outros campos -->
+  <button type="submit">Cadastrar Empresa</button>
+</form>

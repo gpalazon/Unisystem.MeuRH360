@@ -1,0 +1,41 @@
+.app.sidebar-mini .app-sidebar {
+  width: 270px;
+}
+
+
+.app-sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  color: #8a98ac;
+  z-index: 99;
+  /*-webkit-box-shadow: 0 8px 24px rgba(229, 228, 230, 0.4);*/
+  -webkit-transition: all ease 0.2s;
+  -o-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+  background: darkblue !important;
+  padding: 20px;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
+  .app-sidebar img.header-brand-img {
+      max-width: 150px;
+  }
+
+
+  .app-content.main-content {
+    margin-left: 300px !important;
+  }
+
+
+header.navbar .container {
+  margin-left: 300px !important;
+}
+
+img.avatar { 
+  width: 40px;
+  border-radius: 50%;
+  border: solid 2px darkblue;
+}

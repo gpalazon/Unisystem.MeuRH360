@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Services\UserService.cs~RFf53a52.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Unisystem.Teste.Domain\Unisystem.Teste.Domain.csproj" />
+    <ProjectReference Include="..\Unisystem.Teste.Infrastructure\Unisystem.Teste.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

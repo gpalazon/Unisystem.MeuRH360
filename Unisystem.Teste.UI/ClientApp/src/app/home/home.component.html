@@ -1,0 +1,60 @@
+<div class="sidebar">
+  <ul>
+    <li><a routerLink="/company-registration">Configuração da Empresa</a></li>
+    <li><a (click)="logout()">LogOff</a></li>
+  </ul>
+</div>
+
+
+<!--<div class="sticky">
+  <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+  <div class="app-sidebar">
+    <div class="side-header">
+      <a class="header-brand" href="/Home/Index">
+        <img src="/assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
+      </a>
+    </div>
+    <div class="main-sidemenu">
+      <div class="slide-left disabled" id="slide-left">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" />
+        </svg>
+      </div>
+      <ul class="side-menu">
+
+        <li>
+          <h3>EMPRESA</h3>
+        </li>
+        <li class="slide">
+          <a class="side-menu__item has-link" data-bs-toggle="slide" asp-controller="Espaco" asp-action="Index">
+            <i class="side-menu__icon fe fe-home"></i>
+            <span class="side-menu__label">Config da empresa</span>
+          </a>
+          <a class="side-menu__item has-link" data-bs-toggle="slide" asp-controller="UserManagement" asp-action="Index">
+            <i class="side-menu__icon fe fe-user"></i>
+            <span class="side-menu__label">Minha empresa</span>
+          </a>
+
+        </li>
+    
+
+
+      </ul>
+      <div class="slide-right" id="slide-right">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
+             width="24" height="24" viewBox="0 0 24 24">
+          <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>-->
+<!--/APP-SIDEBAR-->
+
+<div class="content">
+  <button (click)="openCompanyModal()">Cadastrar Nova Empresa</button>
+  <router-outlet></router-outlet>
+</div>
+
+<!--<app-company-registration *ngIf="showCompanyModal"></app-company-registration>-->

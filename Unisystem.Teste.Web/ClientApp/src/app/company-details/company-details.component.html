@@ -1,0 +1,247 @@
+
+<div class="sticky">
+  <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+  <div class="app-sidebar">
+    <div class="side-header">
+      <a class="header-brand" href="/Home/Index">
+        <img src="/assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
+      </a>
+    </div>
+    <div class="main-sidemenu">
+
+      <!--<ul class="side-menu">
+
+        <li>
+          <h3>EMPRESA</h3>
+        </li>
+        <li class="slide">
+          <a class="side-menu__item has-link" data-bs-toggle="slide">
+            <i class="side-menu__icon fe fe-user"></i>
+            <span class="side-menu__label">Config da empresa</span>
+          </a>
+          <ul class="slide-menu">
+            <li class="side-menu-label1">
+              <a href="javascript:void(0)" style="font-weight: 700; font-size: 16px;">Config da empresa</a>
+            </li>
+            <li>
+              <a class="side-menu__item has-link" data-bs-toggle="slide">
+                <i class="side-menu__icon fe fe-user"></i>
+                <span class="side-menu__label">Minha empresa</span>
+              </a>
+
+            </li>
+          </ul>
+
+        </li>
+
+
+
+      </ul>-->
+
+      <nav class="sidebar d-flex flex-column p-0">
+        <!--<h4 class="text-light">MENU</h4>-->
+        <ul class="nav flex-column">
+          <!--<li class="nav-item">
+            <a class="nav-link text-light" href="#">Dashboard</a>
+          </li>-->
+          <li>
+            <h3>EMPRESA</h3>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#usersMenu" aria-expanded="false">
+              <i class="fas fa-building"></i><span class="menu-titulo">Config da Empresa</span>
+            </a>
+            <ul class="collapse" id="usersMenu">
+              <li>
+                <a class="nav-link text-light" href="#">Minha empresa</a>
+              </li>
+              <li>
+                <a class="nav-link text-light" href="#">Benefícios</a>
+              </li>
+              <li>
+                <a class="nav-link text-light" href="#">Áreas</a>
+              </li>
+              <li>
+                <a class="nav-link text-light" href="#">Cargos</a>
+              </li>
+              <li>
+                <a class="nav-link text-light" href="#">Filiais</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#settingsMenu" aria-expanded="false">
+              <i class="fas fa-columns"></i><span class="menu-titulo">Config. do sistema</span>
+            </a>
+            <!--<ul class="collapse" id="settingsMenu">
+              <li>
+                <a class="nav-link text-light" href="#">Configurar Empresa</a>
+              </li>
+              <li>
+                <a class="nav-link text-light" href="#">Gerenciar Benefícios</a>
+              </li>
+            </ul>-->
+          </li>
+          <li>
+            <h3>VAGAS</h3>
+          </li>
+          <li class="nav-item">
+            <a class="text-light" href="#" data-bs-toggle="collapse" data-bs-target="#settingsMenu" aria-expanded="false">
+              <i class="fas fa-map-pin"></i><span class="menu-titulo">Gestão de vagas</span>
+            </a>
+            <!--<ul class="collapse" id="settingsMenu">
+              <li>
+                <a class="nav-link text-light" href="#">Configurar Empresa</a>
+              </li>
+              <li>
+                <a class="nav-link text-light" href="#">Gerenciar Benefícios</a>
+              </li>
+            </ul>-->
+          </li>
+          <li>
+            <h3>USUÁRIOS</h3>
+          </li>
+          <li class="nav-item">
+            <a class="text-light" href="#" data-bs-toggle="collapse" data-bs-target="#settingsMenu" aria-expanded="false">
+              <i class="fas fa-id-badge"></i><span class="menu-titulo">Meu perfil</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="text-light" href="#" data-bs-toggle="collapse" data-bs-target="#settingsMenu" aria-expanded="false">
+              <i class="fas fa-users"></i><span class="menu-titulo">Todos os usuários</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+
+
+      <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse">
+        <div class="position-sticky">
+          <ul class="side-menu">
+            <li>
+              <h3>EMPRESA</h3>
+            </li>
+            <!-- Menu Item -->
+            <li class="list-group-item">
+              <a href="#" data-bs-toggle="collapse" data-bs-target="#submenu1" aria-expanded="false">
+                Configurações <i class="side-menu__icon fe fe-chev"></i>
+              </a>
+              <ul class="collapse" id="submenu1">
+                <li><a href="#">Empresa</a></li>
+                <li><a href="#">Usuários</a></li>
+              </ul>
+            </li>
+
+            <!-- Another Menu Item -->
+            <li class="list-group-item">
+              <a href="#" data-bs-toggle="collapse" data-bs-target="#submenu2" aria-expanded="false">
+                Gestão
+              </a>
+              <ul class="collapse" id="submenu2">
+                <li><a href="#">Vagas</a></li>
+                <li><a href="#">Benefícios</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+
+
+
+  </div>
+</div>
+
+<app-nav-menu></app-nav-menu>
+
+<div class="app-content main-content mt-0">
+  <div class="side-app">
+    <div class="main-container container-fluid">
+
+    
+
+      <div *ngIf="company">
+        <div class="row my-2">
+          <div class="col-12">
+            <h2>EMPRESA</h2>
+          </div>
+        </div>
+        <div class="row m-2">
+          <div class="col-12">
+            <a href="#" class="btn btn-outline-primary m-2">
+              <span>Editar empresa</span>
+              <i class="fas fa-edit"></i>
+            </a>
+            <a href="#" class="btn btn-outline-primary m-2">
+              <span>Gestão de filiais</span>
+              <i class="fas fa-gear"></i>
+            </a>
+            <a href="#" class="btn btn-outline-primary m-2">
+              <span>faixas salariais</span>
+              <i class="fas fa-credit-card"></i>
+            </a>
+            <a href="#" class="btn btn-outline-primary m-2">
+              <span>Job Level</span>
+              <i class="fas fa-user"></i>
+            </a>
+          </div>
+        </div>
+
+
+        <div class="row m-2">
+          <div class="col-12 col-md-3 my-3">
+            <span class="campo-titulo">Nome da empresa</span>
+            <span class="campo-valor">{{ company.nome }}</span>
+          </div>
+          <div class="col-12 col-md-3 my-3">
+            <span class="campo-titulo">CNPJ da empresa</span>
+            <span class="campo-valor">{{ company.cnpj }}</span>
+          </div>
+          <div class="col-12 col-md-6 my-3">
+            <span class="campo-titulo">Nome do administrador</span>
+            <span class="campo-valor">{{ company.nomeAdministrador }}</span>
+          </div>
+          <div class="col-12 col-md-3 my-3">
+            <span class="campo-titulo">CPF administrador</span>
+            <span class="campo-valor">{{ company.cpfAdministrador }}</span>
+          </div>
+          <div class="col-12 col-md-5 my-3">
+            <span class="campo-titulo">E-mail</span>
+            <span class="campo-valor">{{ company.email }}</span>
+          </div>
+          <div class="col-12 col-md-4 my-3">
+            <span class="campo-titulo">Telefone</span>
+            <span class="campo-valor">{{ company.celular }}</span>
+          </div>
+          <div class="col-12 col-md-3 my-3">
+            <span class="campo-titulo">CEP</span>
+            <span class="campo-valor">{{ company.cep }}</span>
+          </div>
+          <div class="col-12 col-md-9 my-3">
+            <span class="campo-titulo">Endereço</span>
+            <span class="campo-valor">{{ company.endereco }}, {{ company.bairro }}, {{ company.cidade }} - {{ company.estado }}</span>
+          </div>
+        </div>
+
+
+        <!--<button class="btn btn-primary" routerLink="/company/edit/{{ company.id }}">
+    Editar Empresa
+  </button>-->
+      </div>
+
+        <div *ngIf="!company">
+          <p>Carregando detalhes da empresa...</p>
+        </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<app-company-registration *ngIf="showCompanyModal"></app-company-registration>

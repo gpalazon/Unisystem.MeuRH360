@@ -1,0 +1,66 @@
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+
+form {
+    /*margin: 30px;*/
+    padding: 30px;
+}
+
+
+  .modal-dialog {
+    max-width: 1200px !important;
+  }
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000050;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin: 5px 0;
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #333;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.form-control {
+  margin: 5px 0;
+}
+
+
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 1200px !important;
+    
+  }
+}
+
+
+.footer-comand .btn {
+    width: 100px; margin-left: 10px;
+}

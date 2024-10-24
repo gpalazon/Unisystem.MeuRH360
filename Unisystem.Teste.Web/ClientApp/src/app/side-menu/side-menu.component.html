@@ -1,0 +1,100 @@
+<!--<header>
+  <nav
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+  >
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/']">Unisystem.Teste.UI</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded"
+        (click)="toggle()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+        [ngClass]="{ show: isExpanded }"
+      >
+        <ul class="navbar-nav flex-grow">
+          <li
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/counter']"
+              >Counter</a
+            >
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/fetch-data']"
+              >Fetch data</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>-->
+<!--APP-SIDEBAR-->
+
+<div class="sticky">
+  <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+  <div class="app-sidebar">
+    <div class="side-header">
+      <a class="header-brand" href="/Home/Index">
+        <img src="/assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
+      </a><!-- LOGO -->
+    </div>
+    <div class="main-sidemenu">
+      <div class="slide-left disabled" id="slide-left">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" />
+        </svg>
+      </div>
+      <ul class="side-menu">
+      
+        <li>
+          <h3>Cadastros</h3>
+        </li>
+        <li class="slide">
+          <a class="side-menu__item has-link" data-bs-toggle="slide" asp-controller="Espaco" asp-action="Index">
+            <i class="side-menu__icon fe fe-home"></i>
+            <span class="side-menu__label">Espaços</span>
+          </a>
+          <a class="side-menu__item has-link" data-bs-toggle="slide" asp-controller="UserManagement" asp-action="Index">
+            <i class="side-menu__icon fe fe-user"></i>
+            <span class="side-menu__label">Usuários</span>
+          </a>
+      
+        </li>
+        <li>
+          <h3>Administrativo</h3>
+        </li>
+        <li class="slide">
+          <a class="side-menu__item has-link" data-bs-toggle="slide" asp-controller="Relatorio" asp-action="Index">
+            <i class="side-menu__icon fa fa-line-chart"></i>
+            <span class="side-menu__label">Relatórios</span>
+          </a>
+
+        </li>
+
+
+      </ul>
+      <div class="slide-right" id="slide-right">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
+             width="24" height="24" viewBox="0 0 24 24">
+          <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/APP-SIDEBAR-->

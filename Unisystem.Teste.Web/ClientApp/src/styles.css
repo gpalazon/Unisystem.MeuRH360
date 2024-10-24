@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+
+html,
+body {
+    height: 100%;
+    font-family: Montserrat;
+}
+
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  margin: 15px 0;
+  font-family: 'Montserrat';
+  font-size: 16px;
+}
+
+
+.custom-modal-size {
+  max-width: 100% !important;
+}
+
+
+.modal .modal-dialog {
+    max-width: 1200px !important;
+}
